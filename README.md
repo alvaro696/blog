@@ -1,6 +1,6 @@
 # BackEnd de Gestión de Blogs
 
-Prueba técnica API REST desarrollada con Spring Boot (java17) que permite gestionar blogs, autores y comentarios de manera sencilla. Incluye funcionalidades como crear blogs, agregar comentarios y mantener un historial automático de cambios.
+Prueba técnica API REST desarrollada con Spring Boot (java17)(Dockeriza) que permite gestionar blogs, autores y comentarios de manera sencilla. Incluye funcionalidades como crear blogs, agregar comentarios y mantener un historial automático de cambios.
 
 ## Datos
 
