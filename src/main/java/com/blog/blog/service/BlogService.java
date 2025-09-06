@@ -3,6 +3,7 @@ package com.blog.blog.service;
 import com.blog.blog.dto.BlogRequestDTO;
 import com.blog.blog.dto.BlogResponseDTO;
 import com.blog.blog.dto.AutorResponseDTO;
+import com.blog.blog.dto.HistorialBlogResponseDTO;
 import com.blog.blog.entity.Blog;
 import com.blog.blog.entity.Autor;
 import com.blog.blog.entity.HistorialBlog;
@@ -132,6 +133,30 @@ public class BlogService {
     public Blog obtenerBlogEntity(Long id) {
         return blogRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Blog", "id", id));
+    }
+
+    @Transactional(readOnly = true) 
+    public List<HistorialBlogResponseDTO> obtenerHistorialBlog(Long blogId) {
+        // Verificar que el blog existe
+        obtenerBlogEntity(blogId);
+        
+        // Obtener historial
+        List<HistorialBlog> historial = historialBlogRepository.findByBlogIdOrderByVersionDesc(blogId);
+        
+        // Convertir a DTOs
+        return historial.stream()
+                .map(h -> new HistorialBlogResponseDTO(
+                        h.getId(),
+                        h.getVersion(),
+                        h.getTituloAnterior(),
+                        h.getTemaAnterior(),
+                        h.getContenidoAnterior(),
+                        h.getPeriodicidadAnterior(),
+                        h.getPermitiaComentarios(),
+                        h.getTipoCambio(),
+                        h.getFechaCambio()
+                ))
+                .collect(Collectors.toList());
     }
 
     private void crearEntradaHistorial(Blog blog) {

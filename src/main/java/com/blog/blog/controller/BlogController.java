@@ -118,4 +118,18 @@ public class BlogController {
         List<BlogResponseDTO> blogs = blogService.obtenerTodosLosBlogs();
         return ResponseEntity.ok(blogs);
     }
+
+    // GET historial de un blog
+    @GetMapping("/{id}/historial")
+    @Operation(summary = "Obtener historial de blog", description = "Retorna el historial de cambios de un blog específico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Historial obtenido exitosamente"),
+            @ApiResponse(responseCode = "404", description = "Blog no encontrado")
+    })
+    public ResponseEntity<List<com.blog.blog.dto.HistorialBlogResponseDTO>> obtenerHistorialBlog(
+            @Parameter(description = "ID del blog", required = true) @PathVariable Long id) {
+        
+        List<com.blog.blog.dto.HistorialBlogResponseDTO> historial = blogService.obtenerHistorialBlog(id);
+        return ResponseEntity.ok(historial);
+    }
 }
