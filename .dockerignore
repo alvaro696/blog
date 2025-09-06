@@ -1,0 +1,42 @@
+# Ignorar archivos innecesarios para el contenedor Docker
+
+# Directorio target (se construye dentro del contenedor)
+target/
+
+# Directorios de IDEs
+.idea/
+.vscode/
+*.iml
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales
+*.tmp
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Documentación
+README.md
+*.md
+
+# Scripts de prueba
+test-*.ps1
+test-*.sh
+
+# Archivos de configuración local
+application-local.properties
+application-dev.properties
