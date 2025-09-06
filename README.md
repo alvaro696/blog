@@ -23,7 +23,7 @@ Prueba técnica API REST desarrollada con Spring Boot (java17) que permite gesti
 
 ## Cómo ejecutar la aplicación
 
-### **OPCIÓN 1: Con Docker (Recomendado para producción)**
+### OPCIÓN 1: Con Docker (Recomendado para producción)\*\*
 
 ```bash
 # 1. Construir la imagen Docker
@@ -49,7 +49,7 @@ docker-compose up -d
 docker-compose down
 ```
 
-### Opción 1: Descarga directa (más fácil)
+### OPCIÓN 2: Descarga directa (más fácil)
 
 ```bash
 # 1. Descargar el proyecto
@@ -63,7 +63,7 @@ cd blog
 ./mvnw spring-boot:run
 ```
 
-### Opción 2: Con Maven instalado
+### OPCIÓN 3: Con Maven instalado
 
 ```bash
 mvn spring-boot:run
@@ -73,7 +73,7 @@ mvn spring-boot:run
 
 ## Cómo usar la aplicación
 
-Una vez que veas el mensaje "Started BlogApplication", abre tu navegador y visita:
+En la terminal cuando se muestre el mensaje: "Started BlogApplication", abrir navegador y visitar:
 
 | Página                                                                       | Para qué sirve                                                                            |
 | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
